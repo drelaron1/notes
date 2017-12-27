@@ -1,0 +1,11 @@
+<li *ngFor="let section of sections  | sectionFilter: filter.value"
+    [ngClass]="{active:section.title==activeSection }"
+    (click)="showSection(section)" class="list-group-item">
+  {{section.title}}
+</li>
+<input type="text" class="form-control" placeholder="New section name"
+       #newSection>
+<button class="btn btn-default"
+        type="button" (click)="addSection(newSection)">Add</button>
+
+<input type="text" class="form-control" placeholder="Section filter" #filter (keyup)="0">
